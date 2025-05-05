@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Laralink">
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/favicon.png">
+  <!-- Site Title -->
+  <title>Portm - Personal Portfolio Template</title>
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
+  <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="cs_preloader cs_center">
+    <div class="cs_preloader_in"></div>
+  </div>
+
+  
+  <section class="position-relative d-flex align-items-center text-center vh-100 bg-animation overflow-hidden">
+    <!-- Floating Particles -->
+    <div class="particles"></div>
+
+    <!-- Dark Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+    <!-- Text & Icon Content -->
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 d-flex align-items-center justify-content-center flex-column">
+                <h1 class="fw-bold display-3 text-white text-animate">
+                   Graphic Designing
+                </h1>
+                <!-- Video Editing Icon -->
+                <div class="mt-3">
+                    <i class="fas fa-paint-brush fa-3x text-white icon-hover"></i>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS & FontAwesome Icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+<style>
+    /* Animated Background */
+    .bg-animation {
+        background: linear-gradient(-45deg, #ff512f, #dd2476, #342ead, #00c6ff);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Floating Particles */
+    .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: url('assets/img/particles.png') repeat;
+        animation: moveParticles 20s linear infinite;
+        opacity: 0.2;
+    }
+
+    @keyframes moveParticles {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-30px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Animate Text & Icon on Hover */
+    .text-animate {
+        transition: all 0.4s ease-in-out;
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+        animation: fadeInUp 1s ease-in-out;
+    }
+    .text-animate:hover {
+        background: linear-gradient(90deg, #ff512f, #dd2476);
+        
+        -webkit-text-fill-color: transparent;
+        transform: scale(1.1);
+    }
+
+    /* Hover Animation for Icon */
+    .icon-hover {
+        transition: transform 0.3s ease-in-out, color 0.3s;
+        animation: fadeInUp 1.2s ease-in-out;
+    }
+    .icon-hover:hover {
+        transform: scale(1.2) rotate(10deg);
+        color: #ff512f;
+    }
+
+    /* Fade In Animation */
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .portfolio-section {
+            padding: 80px 10%;
+            text-align: center;
+            position: relative;
+            background: white;
+        }
+        .portfolio-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .portfolio-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #777;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Portfolio Item */
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Overlay */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            padding: 20px;
+            text-align: center;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Project Title & Description */
+        .portfolio-overlay h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .portfolio-overlay p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .portfolio-overlay a {
+            display: inline-block;
+            background: #ff2e63;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .portfolio-overlay a:hover {
+            background: #e62253;
+        }
+    </style>
+</head>
+<body>
+    <!-- The previous project section  -->
+    
+<!-- Bootstrap JS & FontAwesome Icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+<style>
+    /* Glowing Text Effect */
+
+    .text-glow {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Hover Animation for Icon */
+    .icon-hover {
+        transition: transform 0.3s ease-in-out;
+    }
+    .icon-hover:hover {
+        transform: scale(1.2) rotate(10deg);
+    }
+</style>
+
+
+  <!-- Start Header Section -->
+  <header class="cs_site_header cs_style_1 cs_sticky_header cs_color_2">
+    <div class="cs_main_header">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="home.html">
+              <img src="assets/img/logo2.svg" alt="Logo">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li class="active menu-item-has-children"><a href="home.html">Home</a>
+                  
+                </li>
+                <li class="menu-item-has-children"><a href="about.html">About</a>
+                  
+                </li>
+                <li class="menu-item-has-children"><a href="portfolio.html">Portfolio</a>
+                 
+                </li>
+                <li class="menu-item-has-children"><a href="#">Pages</a>
+                 
+                </li>
+                <li class="menu-item-has-children"><a href="blog.html">Blog</a>
+                  
+                </li>
+                <li> <a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs_main_header_right">
+            <a href="contact.html" class="cs_btn cs_style_1 cs_primary_font"><span>Hire Me</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header Section -->
+<!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2>🎨 Featured Projects</h2>
+        <p>A selection of my best design projects showcasing creativity & quality.</p>
+
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/pointofsale.png" alt="Project 1 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>Mobile App UI</h3>
+                    <p>Designed an intuitive mobile app with a modern UI.</p>
+                    <a href="https://www.figma.com/design/sn4VxgWzoouOoCTV2amG2q/Point-Of-Sale-Mobile-APP?node-id=0-1&t=RbKDVbWmMrdcc0AC-1">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/branding.JPG" alt="Project 2 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>Brand Identity</h3>
+                    <p>Developed a complete branding package for a startup.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/website design.jpg" alt="Project 3 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>Website Redesign</h3>
+                    <p>Revamped a website with a fresh, sleek design.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/socialmedia post.jpg" alt="Project 4 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>Social Media Graphics</h3>
+                    <p>Created high-impact social media content.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/print design.jpg" alt="Project 5 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>Print Design</h3>
+                    <p>Designed marketing materials for a brand.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="portfolio-item">
+                <img src="assets/img/Portfolio/nft-design.png" alt="Project 6 Mockup">
+                <div class="portfolio-overlay">
+                    <h3>NFT Artwork</h3>
+                    <p>Exclusive NFT art collection with stunning visuals.</p>
+                    <a href="NFT.html">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+<!-- The previous project section  -->
+
+
+<!-- Bootstrap Video Modals -->
+<div class="modal fade" id="videoModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Project 1</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <iframe class="w-100" height="400" src="https://www.youtube.com/embed/your-video-1" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat Modals for Other Videos (Change IDs and Video Links) -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+  <!-- Main content inside end-->
+
+ 
+
+
+
+
+
+  <section class="cs_design_categories cs_section position-relative">
+    <div class="animated-bg"></div>
+    <div class="container">
+        <p class="cs_section_subtitle cs_accent_color_2 cs_font_16 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s">
+            <span>Design Categories</span>
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M6.32185 0.162195C5.92711 0.458249 6.20673 1.29707 6.83174 1.70825C7.35805 2.05365 9.61133 2.16878 11.2561 1.95496C15.7627 1.34641 18.2298 2.57997 17.9831 5.2938C17.6377 9.27408 17.5719 12.0866 17.8186 13.4353C18.0982 14.9978 18.0653 14.8826 17.539 14.4879C17.0292 14.1096 15.8614 13.3366 15.2035 12.9254C14.6607 12.5965 13.7232 12.1195 13.5423 12.728C13.2462 13.7313 12.358 15.2774 11.5686 16.33C9.77579 18.7149 6.32185 19.2577 3.36131 18.7478C2.11131 18.534 2.07841 18.1063 2.12775 17.1688C2.29223 13.8136 2.52246 4.86616 2.9172 2.97471C3.11457 2.02076 3.34485 1.85628 4.08498 1.64246C5.38433 1.28062 4.4962 0.655619 2.96659 0.836541C1.89751 0.968121 1.28895 1.36286 0.910659 2.76089C0.334999 4.9484 0.400789 8.92867 0.0060502 17.0702C-0.0926344 18.9781 1.02579 19.636 2.63764 19.8004C3.59159 19.8991 5.03895 19.932 7.47317 19.9649C10.4995 19.9978 12.0126 20.0471 13.0324 19.8991C14.1837 19.7346 14.6936 19.3235 16.0588 18.4188C20.368 15.5241 20.2035 15.7873 20.2199 11.9714C20.2528 3.22142 19.0357 0.984568 14.0686 0.754304Z"/>
+            </svg>
+        </p>
+        <h2 class="cs_section_title cs_font_48 cs_semi_bold wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+            Explore My <span class="cs_accent_color">Design Categories</span>
+        </h2>
+        <div class="cs_category_wrapper">
+            <div class="cs_category_card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                <img src="assets/img/Portfolio/uiux.jpg" alt="UI/UX Design">
+                <h3 class="cs_category_title">UI/UX Design</h3>
+            </div>
+            <div class="cs_category_card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                <img src="assets/img/Portfolio/logo designer.JPG" alt="Branding">
+                <h3 class="cs_category_title">Branding</h3>
+            </div>
+            <div class="cs_category_card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                <img src="assets/img/Portfolio/logo designer1.JPG" alt="Logo Design">
+                <h3 class="cs_category_title">Logo Design</h3>
+            </div>
+            <div class="cs_category_card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                <img src="assets/img/Portfolio/poster design.JPG" alt="Social Media Graphics">
+                <h3 class="cs_category_title">Social Media Graphics</h3>
+            </div>
+            <div class="cs_category_card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                <img src="assets/img/Portfolio/nft.jpg" alt="NFT Art">
+                <h3 class="cs_category_title">NFT Art</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* White Animated Background */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
+    z-index: -1;
+    animation: bgAnimation 5s infinite alternate ease-in-out;
+}
+
+@keyframes bgAnimation {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.1); }
+}
+
+/* Main Section */
+.cs_design_categories {
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Category Wrapper */
+.cs_category_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Category Cards - Full Image Box with Animated Stroke */
+.cs_category_card {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.cs_category_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Outer Stroke Animation */
+.cs_category_card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    animation: glowing-border 1.5s infinite linear;
+}
+
+@keyframes glowing-border {
+    0% { border-color: rgba(255, 46, 99, 0.3); }
+    50% { border-color: rgba(255, 46, 99, 0.8); }
+    100% { border-color: rgba(255, 46, 99, 0.3); }
+}
+
+/* Hover Effects */
+.cs_category_card:hover {
+    transform: scale(1.05);
+}
+
+/* Category Titles */
+.cs_category_title {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cs_category_card:hover .cs_category_title {
+    opacity: 1;
+}
+</style>
+
+<!-- Start of Tool I used -->
+<section class="tools-section position-relative text-center py-5">
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <div class="container">
+        <h2 class="mb-5 fw-bold text-dark">💡 Tools & Software I Use</h2>
+        <h3 class="mb-5 fw-bold text-dark">Click to Check</h3>
+        <div class="row g-4 justify-content-center">
+            <!-- Tool Item -->
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="90">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop">
+                    </div>
+                    <h5>Photoshop</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="75">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
+                    </div>
+                    <h5>Premiere Pro</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="85">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="After Effects">
+                    </div>
+                    <h5>After Effects</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="80">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Illustrator">
+                    </div>
+                    <h5>Illustrator</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="70">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+                    </div>
+                    <h5>Figma</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="tool-box" data-percent="60">
+                    <div class="icon-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">
+                    </div>
+                    <h5>Canva</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Animated Background */
+    .animated-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(241, 38, 38);
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    /* Red Particles Animation */
+    .animated-bg::before,
+    .animated-bg::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: red;
+        border-radius: 50%;
+        animation: moveParticles 10s infinite linear;
+    }
+
+    .animated-bg::before { top: 10%; left: 5%; animation-delay: 0s; }
+    .animated-bg::after { top: 80%; left: 90%; animation-delay: 3s; }
+
+    /* Red Lines Animation */
+    .animated-bg div {
+        position: absolute;
+        width: 2px;
+        height: 100px;
+        background: red;
+        opacity: 0.5;
+        animation: moveLines 5s infinite alternate ease-in-out;
+    }
+
+    .animated-bg div:nth-child(1) { top: 20%; left: 10%; animation-delay: 1s; }
+    .animated-bg div:nth-child(2) { top: 50%; left: 30%; animation-delay: 2s; }
+    .animated-bg div:nth-child(3) { top: 70%; left: 50%; animation-delay: 3s; }
+    .animated-bg div:nth-child(4) { top: 30%; left: 80%; animation-delay: 4s; }
+    .animated-bg div:nth-child(5) { top: 60%; left: 90%; animation-delay: 5s; }
+
+    @keyframes moveParticles {
+        0% { transform: translateY(0) translateX(0); }
+        100% { transform: translateY(40px) translateX(-40px); }
+    }
+
+    @keyframes moveLines {
+        0% { transform: scaleY(1); }
+        100% { transform: scaleY(1.5); }
+    }
+
+    /* Tool Box */
+    .tool-box {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 12px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+        text-align: center;
+    }
+
+    .tool-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        border-color: red;
+    }
+
+    /* Icon Container */
+    .icon-container {
+        width: 60px; /* Adjusted icon size */
+        height: 60px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid rgba(255, 0, 0, 0.4);
+        padding: 10px;
+    }
+
+    .icon-container img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+        width: 80%;
+        height: 10px;
+        background: rgba(255, 0, 0, 0.2);
+        border-radius: 5px;
+        margin: 10px auto 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: red;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 10px;
+        border-radius: 5px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.tool-box').forEach(box => {
+        box.addEventListener('mouseenter', function() {
+            let percent = this.getAttribute('data-percent');
+            let progress = this.querySelector('.progress-fill');
+            let count = 0;
+            let interval = setInterval(() => {
+                if (count >= percent) clearInterval(interval);
+                progress.style.width = count + "%";
+                progress.textContent = count + "%";
+                count++;
+            }, 10);
+        });
+    });
+</script>
+
+<!-- End of Tools I use  -->
+
+<!-- Start of Client Feedback  -->
+
+<section class="container my-5 text-center">
+    <h2 class="fw-bold mb-4">⭐ Client Testimonials & Feedback</h2>
+    <p class="mb-5">What my clients say about my work.</p>
+
+    <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+                <div class="testimonial-card mx-auto">
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+                    <p class="testimonial-text">"Absolutely fantastic work! The designs were creative, and the delivery was on time. Highly recommended!"</p>
+                    <h5 class="client-name">- John Doe</h5>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-text">"An amazing experience working with Naveedur! His attention to detail is unmatched. I will hire again!"</p>
+                    <h5 class="client-name">- Sarah Khan</h5>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p class="testimonial-text">"Excellent video editing and graphic designing skills. Super happy with the final result!"</p>
+                    <h5 class="client-name">- Michael Lee</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<style>
+    /* Testimonial Card */
+    .testimonial-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Animated Stars */
+    .stars {
+        font-size: 22px;
+        color: #FFD700;
+        animation: glowStars 1.5s infinite alternate;
+    }
+
+    @keyframes glowStars {
+        from {
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+        to {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 1);
+        }
+    }
+
+    /* Client Name */
+    .client-name {
+        font-weight: bold;
+        margin-top: 15px;
+        color: #333;
+    }
+
+    /* Carousel Controls */
+    .carousel-control-prev, .carousel-control-next {
+        filter: invert(1);
+    }
+</style>
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- end of clients Feedback  -->
+
+<script>
+    document.querySelector(".cs_scroll_left").addEventListener("click", function() {
+        document.querySelector(".cs_design_slider").scrollBy({ left: -300, behavior: "smooth" });
+    });
+    
+    document.querySelector(".cs_scroll_right").addEventListener("click", function() {
+        document.querySelector(".cs_design_slider").scrollBy({ left: 300, behavior: "smooth" });
+    });
+</script>
+
+ <!-- Start Footer -->
+ <footer class="cs_footer cs_style_1 cs_filled_bg position-relative" data-src="assets/img/bg/footer_bg.svg">
+    <div class="position-absolute cs_footer_shape_1">
+      <img src="assets/img/footer_shape.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="cs_footer_cta">
+        <h2 class="cs_font_92 cs_gradient_text_2 cs_semi_bold">Have a project?</h2>
+        <a href="contact.html" class="cs_btn cs_style_1 cs_primary_font"><span>Let’s
+            Talk</span></a>
+      </div>
+      <div class="cs_copyright">© 2023 <a href="#">naveed</a>. All rights reserved</div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Script -->
+  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/plugins/isotope.pkg.min.js"></script>
+  <script src="assets/js/plugins/odometer.min.js"></script>
+  <script src="assets/js/plugins/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

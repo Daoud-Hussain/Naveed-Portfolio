@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Laralink">
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/favicon.png">
+  <!-- Site Title -->
+  <title>Portm - Personal Portfolio Template</title>
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
+  <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Light Theme with Creative Animations */
+    body {
+        background: #fdfdfd;
+        font-family: Arial, sans-serif;
+    }
+
+    .nft-section {
+        padding: 80px 10%;
+        text-align: center;
+        position: relative;
+    }
+
+    .nft-section h2 {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Animated NFT Frames */
+    .nft-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .nft-item {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nft-frame {
+        padding: 15px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #ff8c00, #ff2e63);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    .nft-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
+    .nft-item:hover {
+        transform: scale(1.05);
+    }
+
+    /* Floating Animation for Frame */
+    @keyframes floating {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
+    }
+
+    .nft-frame:hover {
+        animation: floating 2s infinite;
+    }
+
+    /* Subtle Glow Animation */
+    .nft-item:hover .nft-frame {
+        box-shadow: 0 12px 25px rgba(255, 46, 99, 0.3);
+    }
+  
+/* Hero Section Styling */
+.nft-hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* Background Video */
+.nft-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%); /* Adjust to keep text visible */
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Text */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+}
+.gradient-text {
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subheading */
+.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+/* CTA Button */
+.explore-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(221, 36, 118, 0.4);
+}
+.explore-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(221, 36, 118, 0.6);
+}
+
+</style>
+</head>
+
+<body>
+  <div class="cs_preloader cs_center">
+    <div class="cs_preloader_in"></div>
+  </div>
+  
+  <!-- Start Header Section -->
+  <header class="cs_site_header cs_style_1 cs_sticky_header cs_color_2">
+    <div class="cs_main_header">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="home.html">
+              <img src="assets/img/logo2.svg" alt="Logo">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li class="active menu-item-has-children"><a href="home.html">Home</a>
+                  
+                </li>
+                <li class="menu-item-has-children"><a href="about.html">About</a>
+                  
+                </li>
+                <li class="menu-item-has-children"><a href="portfolio.html">Portfolio</a>
+                 
+                </li>
+                <li class="menu-item-has-children"><a href="#">Pages</a>
+                 
+                </li>
+                <li class="menu-item-has-children"><a href="blog.html">Blog</a>
+                  
+                </li>
+                <li> <a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs_main_header_right">
+            <a href="contact.html" class="cs_btn cs_style_1 cs_primary_font"><span>Hire Me</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header Section -->
+  <section class="nft-hero position-relative d-flex align-items-center text-center">
+    <!-- Video Background -->
+    <video autoplay muted loop class="nft-video">
+        <source src="assets/img/NFT hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="container position-relative">
+        <h1 class="hero-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+            Discover Unique <span class="gradient-text">NFT Creations</span>
+        </h1>
+        <p class="hero-subtitle wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+            Where Art Meets Blockchain – Explore, Own, and Trade Digital Masterpieces
+        </p>
+        <a href="#explore" class="explore-btn">Explore NFTs</a>
+    </div>
+</section>
+
+  <section class="nft-section">
+    <h2>NFT & Design Showcase</h2>
+    <p>Discover my latest NFT artworks and creative designs.</p>
+    <div class="nft-grid">
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/nft1.jpg" alt="NFT Artwork 1">
+            </div>
+        </div>
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/NFT 2.jpg" alt="NFT Artwork 2">
+            </div>
+        </div>
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/nft3.jpg" alt="NFT Artwork 3">
+            </div>
+        </div>
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/nft4.jpg" alt="NFT Artwork 4">
+            </div>
+        </div>
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/NFT5.jpg" alt="NFT Artwork 4">
+            </div>
+        </div>
+        <div class="nft-item">
+            <div class="nft-frame">
+                <img src="assets/img/Portfolio/nft6.jpg" alt="NFT Artwork 4">
+            </div>
+        </div>
+        
+    </div>
+</section>
+  
+
+  <!-- Start Footer -->
+  <footer class="cs_footer cs_style_1 cs_filled_bg position-relative" data-src="assets/img/bg/footer_bg.svg">
+    <div class="position-absolute cs_footer_shape_1">
+      <img src="assets/img/footer_shape.svg" alt="">
+    </div>
+    <div class="container">
+      <div class="cs_footer_cta">
+        <h2 class="cs_font_92 cs_gradient_text_2 cs_semi_bold">Have a project?</h2>
+        <a href="contact.html" class="cs_btn cs_style_1 cs_primary_font"><span>Let’s
+            Talk</span></a>
+      </div>
+      <div class="cs_copyright">© 2025 <a href="#">khushwaqt</a>. All rights reserved</div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Script -->
+  <script src="assets/js/plugins/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/plugins/isotope.pkg.min.js"></script>
+  <script src="assets/js/plugins/odometer.min.js"></script>
+  <script src="assets/js/plugins/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
