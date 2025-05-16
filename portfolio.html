@@ -18,32 +18,33 @@
   <link rel="stylesheet" href="assets/css/plugins/animate.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .heading-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.3;
+    .hero-heading {
+      font-family: 'Barlow', sans-serif;
+      line-height: 1.2;
       color: #111;
     }
 
-    .signature-font {
-      font-family: 'Great Vibes', cursive;
+    .hero-heading .small-text {
+      font-size: 1.2rem;
       font-weight: 400;
-      color: #ff2e63;
-      font-size: 3.2rem;
+      color: #333;
     }
 
-    .highlight {
-      color: #ff512f;
+    .hero-heading .main-text {
+      font-size: 3rem;
       font-weight: 700;
+      color: #ff2e63; /* Your theme accent */
+    }
+
+    .hero-heading .sub-text {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #333;
     }
 
     @media (max-width: 768px) {
-      .heading-section h2 {
-        font-size: 2rem;
-      }
-      .signature-font {
-        font-size: 2.5rem;
+      .hero-heading .main-text {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -130,13 +131,12 @@
                                 fill="#342EAD" />
                         </svg>
                     </p>
-                    <div class="container text-center py-5 heading-section">
-  <h2>
-    High Quality 
-    <span class="signature-font">Social Media Post</span> 
-    for your 
-    <span class="highlight">Post</span>
-  </h2>
+<div class="container text-start py-5">
+  <div class="hero-heading">
+    <div class="small-text">High quality</div>
+    <div class="main-text">Social Media Post</div>
+    <div class="sub-text">Designs</div>
+  </div>
 </div>
                 </div>
                 
